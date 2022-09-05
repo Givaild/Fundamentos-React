@@ -21,7 +21,7 @@
     padding: 24px;
     font-weight: 700;
     background: #ea4c89;
-    color:#fffdfd;
+    color:#ffffff;
     border-radius: 5px;
     margin: 12px 0 84px;
     border: none;
@@ -31,6 +31,6 @@
     
 }
 
-.container button:hover{
+.container button:hover {
     filter: brightness(0.9);
 }
