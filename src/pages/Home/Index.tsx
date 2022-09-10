@@ -1,13 +1,21 @@
 import './styles.css';
-import { Card } from '../../componets/Card'; 
+import { Card,CardProps } from '../../componets/Card'; 
 import { useEffect, useState } from 'react';
+
+interface ProfileResponse {
+  name: string;
+  avatar_url: string;
+}
+
+interface User {
+  name: string;
+  avatar: string;
+}
 
 export function Home() {
   const [personName,setPersonName] = useState('');
-  const [persons,setPersons] = useState([]);
-  const [user,setUser] = useState({
-    name:'', avatar:''
-  });
+  const [persons,setPersons] = useState<CardProps[]>([]);
+  const [user,setUser] = useState<User>({} as User);
 
  function handleAddPerson(){
     const newPerson = {
@@ -53,7 +61,13 @@ export function Home() {
       </button>
 
      {
-      persons.map(thePerson => <Card name={thePerson.name} time={thePerson.time}/>)
+      persons.map(thePerson => (
+      <Card
+        key={thePerson.time}
+        name={thePerson.name}
+        time={thePerson.time}
+       />
+      ))
      
      }
            
